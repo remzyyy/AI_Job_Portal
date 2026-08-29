@@ -58,7 +58,18 @@ Project_aami/
 ### Prerequisites
 - Python 3.10+
 - Node.js 18+
+### Find Path(Backend Fronted)
 
+```bash
+pwd
+dir
+
+cd Project_aami
+dir
+
+
+
+```
 ### Backend
 
 ```bash
