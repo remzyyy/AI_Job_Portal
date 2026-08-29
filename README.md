@@ -166,7 +166,7 @@ After seeding, log in with:
 
 ## Completed by-
 ```bash
-# Rameez Siddiqui
-# gmail- rameezsid1234@gmail.com
-# IIIT BHUBANESWAR
+ Rameez Siddiqui
+ gmail- rameezsid1234@gmail.com
+ IIIT BHUBANESWAR
 ```
