@@ -58,9 +58,19 @@
     }
     .star { color: #fbbf24; }
     .footer-note { position: absolute; bottom: 12px; left: 40px; font-size: 0.5em; color: #64748b; }
+    /* clickable "open live app" link, top-right of every slide */
+    .app-link {
+      position: fixed; top: 14px; right: 20px; z-index: 200;
+      background: linear-gradient(135deg, var(--brand1), var(--brand2));
+      color: #fff !important; text-decoration: none;
+      padding: 6px 14px; border-radius: 20px; font-size: 0.42em; font-weight: 700;
+      box-shadow: 0 4px 14px rgba(129,140,248,0.5);
+    }
+    .app-link:hover { filter: brightness(1.12); }
   </style>
 </head>
 <body>
+<a class="app-link" href="http://localhost:5173" target="_blank" rel="noopener">▶ Open Live Demo</a>
 <div class="reveal"><div class="slides">
 
   <!-- SLIDE 1 -->
@@ -87,7 +97,7 @@
         <p style="margin-top:14px">Built in 3 days · full-stack + AI integration</p>
       </div>
     </div>
-    <div class="footer-note">Slide 1 / 4 — Objective</div>
+    <div class="footer-note">Slide 1 / 5 — Objective</div>
   </section>
 
   <!-- SLIDE 2 -->
@@ -119,7 +129,7 @@
         </ul>
       </div>
     </div>
-    <div class="footer-note">Slide 2 / 4 — Architecture</div>
+    <div class="footer-note">Slide 2 / 5 — Architecture</div>
   </section>
 
   <!-- SLIDE 3 -->
@@ -148,7 +158,7 @@
     <h3 style="margin-top:10px">How AI matching works</h3>
     <p>Validate query → fetch <strong>open</strong> jobs → build GPT prompt → parse scores (0–100) + explanations → rank &amp; return top 20.
     <em>Fallback:</em> keyword scoring if the API is unavailable — the feature never breaks in a demo.</p>
-    <div class="footer-note">Slide 3 / 4 — Workflow</div>
+    <div class="footer-note">Slide 3 / 5 — Workflow</div>
   </section>
 
   <!-- SLIDE 4 -->
@@ -178,7 +188,39 @@
         </ul>
       </div>
     </div>
-    <div class="footer-note">Slide 4 / 4 — Quality &amp; Roadmap</div>
+    <div class="footer-note">Slide 4 / 5 — Quality &amp; Roadmap</div>
+  </section>
+
+  <!-- SLIDE 5 — DEMO RUNBOOK -->
+  <section>
+    <span class="badge">Live Demo Runbook</span>
+    <h2>Quick Demo Walkthrough</h2>
+    <ul>
+      <li><strong>1. Servers running?</strong> Backend <em>uvicorn app.main:app --port 8000</em> · Frontend <em>npm run dev</em></li>
+      <li><strong>2. Open</strong> <em>http://localhost:5173</em> <span style="color:#94a3b8">(or click ▶ Open Live Demo, top-right)</span></li>
+    </ul>
+    <div class="cols">
+      <div>
+        <h3>3. As Candidate</h3>
+        <p class="subtitle" style="margin-bottom:6px">candidate@example.com / candidate123</p>
+        <ul>
+          <li>Job Search with filters (skill / Indian location / level)</li>
+          <li><span class="star">★</span> <strong>AI Matching</strong> — natural-language query → ranked results + explanations</li>
+          <li>Apply to a job</li>
+        </ul>
+      </div>
+      <div>
+        <h3>4. As Admin</h3>
+        <p class="subtitle" style="margin-bottom:6px">admin@example.com / admin123</p>
+        <ul>
+          <li>Job Manager → create a job live</li>
+          <li>Application Review → <em>Applied → Shortlisted</em></li>
+          <li>Dashboard → analytics update</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:10px"><strong>5. Mention:</strong> 24 seeded jobs across Indian + global locations · 34 passing tests</p>
+    <div class="footer-note">Slide 5 / 5 — Demo Runbook</div>
   </section>
 
 </div></div>
