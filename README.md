@@ -163,3 +163,8 @@ After seeding, log in with:
 - The AI matching falls back to keyword scoring when no OpenAI key is present, so the feature is fully demonstrable offline.
 - SQLite is used for the demo; the schema is Postgres-compatible via SQLAlchemy.
 - Admins only see and manage their own job listings and the applications to them.
+
+
+Rameez Siddiqui
+gmail- rameezsid1234@gmail.com
+IIIT BHUBANESWAR
