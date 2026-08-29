@@ -2,6 +2,15 @@
 
 A full-stack job board web application with AI-powered candidate matching. Company Admins post and manage job listings; Candidates create profiles, browse jobs, and apply. Candidates can also describe their ideal role in natural language and receive AI-ranked job matches with explanations.
 
+
+### Run URL For Project_DEMO
+```bash
+
+ http://localhost:5173/
+
+```
+
+
 ## Tech Stack
 
 **Backend**
