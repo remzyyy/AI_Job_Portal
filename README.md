@@ -2,6 +2,15 @@
 
 A full-stack job board web application with AI-powered candidate matching. Company Admins post and manage job listings; Candidates create profiles, browse jobs, and apply. Candidates can also describe their ideal role in natural language and receive AI-ranked job matches with explanations.
 
+
+### Run URL For Project_DEMO
+```bash
+
+ http://localhost:5173/
+
+```
+
+
 ## Tech Stack
 
 **Backend**
@@ -58,7 +67,51 @@ Project_aami/
 ### Prerequisites
 - Python 3.10+
 - Node.js 18+
+### Find Path(Backend Fronted)
 
+```bash
+pwd
+dir
+
+cd Project_aami
+dir
+
+# After dir you can write command-
+
+# For backend (In Terminal 1)-
+cd backend
+uvicorn app.main:app --reload --port 8000
+
+# For Frontend (In Terminal 2)-
+cd frontend
+npm run dev
+
+
+
+# After you got -
+> ai-job-board-frontend@1.0.0 dev
+> vite
+
+
+  VITE v5.4.8  ready in 679 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+h
+
+  Shortcuts
+  press r + enter to restart the server
+  press u + enter to show server url
+  press o + enter to open in browser
+  press c + enter to clear console
+  press q + enter to quit
+
+
+
+
+
+```
 ### Backend
 
 ```bash
