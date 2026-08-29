@@ -70,7 +70,8 @@
   </style>
 </head>
 <body>
-<a class="app-link" href="http://localhost:5173" target="_blank" rel="noopener">▶ Open Live Demo</a>
+<a class="app-link" href="http://localhost:5173" target="_blank" rel="noopener"
+   onclick="window.open('http://localhost:5173','_blank');return true;">▶ Open Live Demo</a>
 <div class="reveal"><div class="slides">
 
   <!-- SLIDE 1 -->
@@ -197,7 +198,7 @@
     <h2>Quick Demo Walkthrough</h2>
     <ul>
       <li><strong>1. Servers running?</strong> Backend <em>uvicorn app.main:app --port 8000</em> · Frontend <em>npm run dev</em></li>
-      <li><strong>2. Open</strong> <em>http://localhost:5173</em> <span style="color:#94a3b8">(or click ▶ Open Live Demo, top-right)</span></li>
+      <li><strong>2. Open</strong> <a href="http://localhost:5173" target="_blank" rel="noopener" onclick="window.open('http://localhost:5173','_blank');return true;" style="color:#67e8f9;font-weight:700">http://localhost:5173 ↗</a> <span style="color:#94a3b8">(or click ▶ Open Live Demo, top-right)</span></li>
     </ul>
     <div class="cols">
       <div>
@@ -227,6 +228,13 @@
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script>
   Reveal.initialize({ hash: true, transition: 'slide', width: 1280, height: 720, margin: 0.04 });
+  // Ensure links always open even if reveal captures the click.
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.stopPropagation();
+      window.open(a.href, '_blank');
+    });
+  });
 </script>
 </body>
 </html>
