@@ -77,6 +77,8 @@ uvicorn app.main:app --reload --port 8000
 cd frontend
 npm run dev
 
+
+
 # After you got -
 > ai-job-board-frontend@1.0.0 dev
 > vite
