@@ -67,6 +67,18 @@ dir
 cd Project_aami
 dir
 
+# After dir you can write command-
+
+# For backend -
+cd backend
+uvicorn app.main:app --reload --port 8000
+
+# For Frontend-
+cd frontend
+npm run dev
+
+
+
 
 
 ```
