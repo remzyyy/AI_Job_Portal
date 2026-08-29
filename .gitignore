@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.db
+.env
+venv/
+.venv/
+.pytest_cache/
+.hypothesis/
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Editor / OS
+.DS_Store
+.vscode/
+*.swp
+
+# Docs source (assignment brief — keep out of public repo if desired)
+# KPiTech_Project_Brief_C_Job_Board 2.docx
