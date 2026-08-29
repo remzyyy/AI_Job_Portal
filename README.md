@@ -165,6 +165,6 @@ After seeding, log in with:
 - Admins only see and manage their own job listings and the applications to them.
 
 ## Completed by-
-Rameez Siddiqui
-gmail- rameezsid1234@gmail.com
-IIIT BHUBANESWAR
+-Rameez Siddiqui
+-gmail- rameezsid1234@gmail.com
+-IIIT BHUBANESWAR
