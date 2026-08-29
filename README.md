@@ -77,6 +77,25 @@ uvicorn app.main:app --reload --port 8000
 cd frontend
 npm run dev
 
+# After you got -
+> ai-job-board-frontend@1.0.0 dev
+> vite
+
+
+  VITE v5.4.8  ready in 679 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+h
+
+  Shortcuts
+  press r + enter to restart the server
+  press u + enter to show server url
+  press o + enter to open in browser
+  press c + enter to clear console
+  press q + enter to quit
+
 
 
 
