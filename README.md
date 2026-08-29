@@ -69,11 +69,11 @@ dir
 
 # After dir you can write command-
 
-# For backend -
+# For backend (In Terminal 1)-
 cd backend
 uvicorn app.main:app --reload --port 8000
 
-# For Frontend-
+# For Frontend (In Terminal 2)-
 cd frontend
 npm run dev
 
