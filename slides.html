@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Job Board — Demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" />
+  <style>
+    :root {
+      --brand1: #818cf8;
+      --brand2: #ec4899;
+      --brand3: #2dd4bf;
+    }
+    .reveal {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .reveal .slides {
+      text-align: left;
+    }
+    .reveal .slides section {
+      background:
+        radial-gradient(at 15% 20%, rgba(99,102,241,0.18), transparent 45%),
+        radial-gradient(at 85% 80%, rgba(236,72,153,0.15), transparent 45%);
+      border-radius: 16px;
+      padding: 30px 40px !important;
+    }
+    .reveal h1, .reveal h2, .reveal h3 {
+      background: linear-gradient(135deg, var(--brand1), var(--brand2));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      text-transform: none; letter-spacing: -0.5px;
+    }
+    .reveal h1 { font-size: 2.1em; }
+    .reveal h2 { font-size: 1.5em; margin-bottom: 0.5em; }
+    .reveal h3 { font-size: 1.05em; color: var(--brand3); -webkit-text-fill-color: initial; background: none; }
+    .reveal p, .reveal li { font-size: 0.72em; line-height: 1.5; color: #e2e8f0; }
+    .reveal strong { color: #fbbf24; }
+    .reveal em { color: #67e8f9; font-style: normal; }
+    .reveal ul { margin-left: 1em; }
+    .reveal .subtitle { color: #94a3b8; font-size: 0.85em; margin-top: -0.4em; }
+    .reveal pre {
+      box-shadow: none; width: 100%; font-size: 0.42em; line-height: 1.35;
+    }
+    .reveal pre code {
+      background: rgba(15,23,42,0.85); border: 1px solid rgba(129,140,248,0.3);
+      border-radius: 12px; padding: 16px; max-height: none; color: #cbd5e1;
+    }
+    .reveal .cols { display: flex; gap: 32px; }
+    .reveal .cols > div { flex: 1; }
+    .badge {
+      display: inline-block; background: linear-gradient(135deg, var(--brand1), var(--brand2));
+      color: white; padding: 3px 12px; border-radius: 20px; font-size: 0.6em; font-weight: 700;
+      -webkit-text-fill-color: white; margin-bottom: 12px;
+    }
+    .reveal .stack-tags span {
+      display: inline-block; background: rgba(129,140,248,0.15); border: 1px solid rgba(129,140,248,0.4);
+      color: #c7d2fe; padding: 4px 12px; border-radius: 8px; font-size: 0.62em; margin: 3px;
+    }
+    .star { color: #fbbf24; }
+    .footer-note { position: absolute; bottom: 12px; left: 40px; font-size: 0.5em; color: #64748b; }
+  </style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+  <!-- SLIDE 1 -->
+  <section>
+    <span class="badge">KPi-Tech Assignment C</span>
+    <h1>AI Job Board</h1>
+    <p class="subtitle">A full-stack job board with AI-powered candidate matching</p>
+    <div class="cols">
+      <div>
+        <h3>The idea</h3>
+        <ul>
+          <li>Admins post &amp; manage job listings</li>
+          <li>Candidates build profiles, browse &amp; apply</li>
+          <li><strong>AI matching:</strong> describe your ideal role in plain English → ranked jobs <em>with explanations</em></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tech stack</h3>
+        <div class="stack-tags">
+          <span>Python</span><span>FastAPI</span><span>SQLAlchemy</span>
+          <span>SQLite</span><span>React</span><span>Vite</span>
+          <span>OpenAI GPT</span><span>JWT Auth</span>
+        </div>
+        <p style="margin-top:14px">Built in 3 days · full-stack + AI integration</p>
+      </div>
+    </div>
+    <div class="footer-note">Slide 1 / 4 — Objective</div>
+  </section>
+
+  <!-- SLIDE 2 -->
+  <section>
+    <h2>System Architecture</h2>
+    <pre><code>┌─────────────────────────┐        ┌──────────────────────────────────┐
+│    FRONTEND (React)     │        │        BACKEND (FastAPI)          │
+│                         │  HTTP  │                                    │
+│  Admin views            │ ─JSON→ │  Routers  (REST endpoints)         │
+│   • Dashboard           │        │      ↓                             │
+│   • Job Manager / Form  │        │  Services (business logic)         │
+│   • Application Review  │        │   • Job / Candidate / Application  │
+│                         │ ←JSON─ │   • MatchingService ──► OpenAI API │
+│  Candidate views        │        │   • AnalyticsService               │
+│   • Profile / Search    │        │      ↓                             │
+│   • AI Matching ★       │        │  SQLAlchemy ORM ──► SQLite DB      │
+└─────────────────────────┘        └──────────────────────────────────┘</code></pre>
+    <div class="cols">
+      <div><h3>Principles</h3>
+        <ul>
+          <li>Clean client–server split (stateless JSON API)</li>
+          <li>Layered: <strong>routers → services → ORM</strong></li>
+        </ul>
+      </div>
+      <div><h3>Security &amp; data</h3>
+        <ul>
+          <li><strong>JWT auth</strong>, role-based (admin / candidate)</li>
+          <li>Users · Jobs · Profiles · Applications</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-note">Slide 2 / 4 — Architecture</div>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section>
+    <h2>End-to-End Workflow</h2>
+    <div class="cols">
+      <div>
+        <h3>Admin</h3>
+        <ul>
+          <li>Create job (title, skills, level, location, open/closed)</li>
+          <li>Review applications</li>
+          <li>Update status: <em>Applied → Shortlisted → Rejected</em></li>
+          <li>Dashboard: per-job counts, skill distribution, pipeline</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Candidate</h3>
+        <ul>
+          <li>Create profile</li>
+          <li>Search &amp; filter (skill / location / level)</li>
+          <li><span class="star">★</span> <strong>AI Matching</strong> — natural-language query</li>
+          <li>Apply (no duplicates, no closed jobs, profile required)</li>
+        </ul>
+      </div>
+    </div>
+    <h3 style="margin-top:10px">How AI matching works</h3>
+    <p>Validate query → fetch <strong>open</strong> jobs → build GPT prompt → parse scores (0–100) + explanations → rank &amp; return top 20.
+    <em>Fallback:</em> keyword scoring if the API is unavailable — the feature never breaks in a demo.</p>
+    <div class="footer-note">Slide 3 / 4 — Workflow</div>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section>
+    <h2>Engineering Quality &amp; Next Steps</h2>
+    <div class="cols">
+      <div>
+        <h3>What's solid</h3>
+        <ul>
+          <li>Proper HTTP codes (200/201/400/403/404/409/500) + field-level errors</li>
+          <li>Rules enforced: ownership, duplicates, closed jobs, one profile/candidate</li>
+          <li><strong>34 automated tests</strong> — Hypothesis property-based + integration</li>
+          <li>Resilient AI with graceful fallback</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Honest limitations</h3>
+        <ul>
+          <li>JWT not production-hardened (dev secret)</li>
+          <li>SQLite for demo (ORM → Postgres is a config change)</li>
+          <li>No embedding cache on matching yet</li>
+        </ul>
+        <h3 style="margin-top:8px">What I'd do next</h3>
+        <ul>
+          <li>Vector embeddings for cheaper, better matching</li>
+          <li>Rate limiting + caching · refresh tokens · frontend tests</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-note">Slide 4 / 4 — Quality &amp; Roadmap</div>
+  </section>
+
+</div></div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({ hash: true, transition: 'slide', width: 1280, height: 720, margin: 0.04 });
+</script>
+</body>
+</html>
