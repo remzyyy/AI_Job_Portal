@@ -9,7 +9,12 @@ A full-stack job board web application with AI-powered candidate matching. Compa
  http://localhost:5173/
 
 ```
+### AI Job Board Presentation Breakdown
+```bash
 
+ https://docs.google.com/presentation/d/1zcKZCBfxtOW8kLPlc4Ub8h9SXAXt18Ci6iv9b4eTKxU/edit?usp=sharing
+
+```
 
 ## Tech Stack
 
